@@ -22,6 +22,7 @@ bool ofxJsonSettings::load(string file) {
 
 	if (success) {
 		jsonStore = loadData;
+    settingFileName = file;
 
 
 		// Any values bound to gui are bound to memory address of value
@@ -144,6 +145,10 @@ ofColor& ofxJsonSettings::getColor(string key) {
 }
 ofxJSON ofxJsonSettings::getJson(string key) {
 	return get()._jsonVal(key);
+}
+
+string ofxJsonSettings::getLastSavedPath(){
+  return get().settingFileName;
 }
 
 bool ofxJsonSettings::exists(string key) {

@@ -44,6 +44,7 @@ public:
 	static ofVec4f& getVec4(string key);
 	static ofColor& getColor(string key);
 	static ofxJSON getJson(string key);
+  static string getLastSavedPath();
 
 	// Use this to check if a key exists
 	static bool exists(string key);
@@ -118,4 +119,6 @@ private:
 	// make sure there are no copies
 	ofxJsonSettings(ofxJsonSettings const&);
 	void operator=(ofxJsonSettings const&);
+  
+  string settingFileName;
 };
